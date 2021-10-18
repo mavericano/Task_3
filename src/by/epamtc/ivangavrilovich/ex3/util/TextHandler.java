@@ -5,8 +5,6 @@ import java.util.Set;
 public class TextHandler {
     private  String text;
 
-    //fix
-
     public void removeWordsStartingWithOdds(int length) {
         Set<Character> odds = Set.of('q', 'w', 'r', 't', 'p', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm');
         StringBuffer str = new StringBuffer();
@@ -36,6 +34,7 @@ public class TextHandler {
 
         this.text = str.toString();
     }
+
     public void removeNonWordCharacters() {
         StringBuffer str = new StringBuffer();
         char c;
