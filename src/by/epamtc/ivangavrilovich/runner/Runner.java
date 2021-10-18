@@ -1,13 +1,6 @@
 package by.epamtc.ivangavrilovich.runner;
 
-import by.epamtc.ivangavrilovich.ex1.entity.Array;
-import by.epamtc.ivangavrilovich.ex1.util.ArrayFiller;
-import by.epamtc.ivangavrilovich.ex2.util.JaggedArraySorter;
 import by.epamtc.ivangavrilovich.ex3.util.TextHandler;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
 
 public class Runner {
 
@@ -48,9 +41,13 @@ public class Runner {
 //            System.out.println(Arrays.toString(line));
 //        }
 
-        TextHandler txt = new TextHandler("abc abcd ab abcd");
+        TextHandler txt = new TextHandler("abc bbcd ab dbcd aPAx aP");
 
-        txt.replace(3, '1');
+        //txt.replace(3, '1');
+
+        txt.removeWordsStartingWithOdds(4);
+
+        System.out.println(txt);
     }
 
 }
