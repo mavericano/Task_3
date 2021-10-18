@@ -10,10 +10,6 @@ import java.util.Arrays;
 
 public class Runner {
 
-    /*
-     * TODO: return array
-     */
-
     public static void main(String[] args) {
         Array array = new Array(16, 9, 7, 5, 9, 17);
         //Array array2 = ArrayFiller.fillFromConsole();

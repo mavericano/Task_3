@@ -74,7 +74,7 @@ public class TextHandlerRegEx {
         str.replace(index, index + 1, Character.toString(replacement));
     }
 
-    public void replaceAtIndex(int k, char replacement) {
+    public void replaceAtPosition(int k, char replacement) {
         int replacementIndex = k - 1;
         StringBuffer str = new StringBuffer(text);
         Pattern pattern = Pattern.compile("\\b\\w+");
