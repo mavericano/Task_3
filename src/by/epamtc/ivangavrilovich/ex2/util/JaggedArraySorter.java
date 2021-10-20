@@ -1,16 +1,18 @@
 package by.epamtc.ivangavrilovich.ex2.util;
 
+import by.epamtc.ivangavrilovich.ex2.template.Sorter;
+
 import java.util.Arrays;
 
 public class JaggedArraySorter {
 
-    private static void swap(int[] source, int firstIndex, int secondIndex) {
+    public static void swap(int[] source, int firstIndex, int secondIndex) {
         source[secondIndex] ^= source[firstIndex];
         source[firstIndex] ^= source[secondIndex];
         source[secondIndex] ^= source[firstIndex];
     }
 
-    private static int binarySearchAscending(int[] source, int elem) {
+    public static int binarySearchAscending(int[] source, int elem) {
         int low = 0;
         int high = source.length - 1;
         while (low <= high) {
@@ -30,7 +32,7 @@ public class JaggedArraySorter {
         return -1;
     }
 
-    private static int binarySearchDescending(int[] source, int elem) {
+    public static int binarySearchDescending(int[] source, int elem) {
         int low = 0;
         int high = source.length - 1;
         while (low <= high) {
@@ -177,7 +179,7 @@ public class JaggedArraySorter {
     }
 
     public static void sortByMaxAscending(int[][] source) {
-        int[] maxs = findMins(source);
+        int[] maxs = findMaxs(source);
 
         int[] replacements = bubbleSortAscending(maxs);
 
@@ -185,7 +187,7 @@ public class JaggedArraySorter {
     }
 
     public static void sortByMaxDescending(int[][] source) {
-        int[] maxs = findMins(source);
+        int[] maxs = findMaxs(source);
 
         int[] replacements = bubbleSortDescending(maxs);
 
@@ -199,4 +201,11 @@ public class JaggedArraySorter {
         }
     }
 
+    public static void sort(int[][] source, Sorter sorter) {
+        int[] criteria = sorter.findCriteria();
+
+        int[] replacements = sorter.findReplacements(criteria);
+
+        doReplacements(source, replacements);
+    }
 }
